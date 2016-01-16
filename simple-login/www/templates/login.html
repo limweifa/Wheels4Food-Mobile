@@ -1,0 +1,55 @@
+<!--<ion-view view-title="Login" name="login-view">
+    <ion-content class="padding">
+        <div class="list list-inset">
+            <label class="item item-input">
+                <input type="text" placeholder="Username" ng-model="data.username">
+            </label>
+            <label class="item item-input">
+                <input type="text" placeholder="Password" ng-model="data.password">
+            </label>
+        </div>
+        <button class="button button-block button-calm" ng-click="login()">Login</button>
+    </ion-content>
+</ion-view>-->
+
+<ion-view view-title="Wheels4Food Login" name="login-view">
+    <ion-content>
+        <form name="loginForm" novalidate="" ng-submit="login()">
+            <div class="list">
+                <label class="item item-input" ng-class="{'has-error' : loginForm.username.$touched && loginForm.username.$invalid}">
+                    <!--<span class="input-label">Username</span>-->
+                    <input type="text" name="username" placeholder="Username" ng-model="data.username" required>
+                </label>
+                <div class="form-errors" ng-show="loginForm.username.$touched && loginForm.username.$invalid" ng-messages="loginForm.username.$error" ng-messages-include="/templates/formErrorMessages.html"></div>
+                <label class="item item-input" ng-class="{'has-error' : loginForm.password.$touched && loginForm.password.$invalid}">
+                    <!--<span class="input-label">Password</span>-->
+                    <input type="password" name="password" placeholder="Password" ng-model="data.password" required>
+                </label>
+                <div class="form-errors" ng-show="loginForm.password.$touched && loginForm.password.$invalid" ng-messages="loginForm.password.$error" ng-messages-include="/templates/formErrorMessages.html"></div>
+                <li class="item item-toggle">
+                    Remember Me
+                    <label class="toggle toggle-positive">
+                      <input type="checkbox">
+                      <div class="track">
+                        <div class="handle"></div>
+                      </div>
+                    </label>
+                 </li>
+            </div>
+            <div class="padding">
+                <button class="button button-block button-positive">
+                    Login
+                </button>
+                <p class="text-center">
+                    <a href="#/forgot-password">Forgot password</a>
+                </p>
+                <p class="text-center">
+                    <a href="#" ui-sref="register">Register here</a>
+                </p>
+            </div>
+        </form>
+        <div class="bar bar-footer bar-assertive" ng-show="loginFailed">
+            <div class="title">{{error}}</div>
+        </div>
+    </ion-content>
+</ion-view>

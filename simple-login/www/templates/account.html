@@ -1,0 +1,49 @@
+<ion-view view-title="Account" class="account-view">
+    <ion-nav-buttons side="secondary">
+        <button class="button button-clear button-positive" ng-click="openModal()">Edit <i class="ion-compose" style="padding-left:2px"></i></button>
+    </ion-nav-buttons>
+    <ion-content class="padding">
+        <div class="list card">
+
+            <a href="#" class="item item-avatar">
+                <i class="icon ion-person"></i>
+                <h2>Username</h2>
+                <p>{{user.username}}</p>
+            </a>
+            <a href="#" class="item item-avatar">
+                <i class="icon ion-home"></i>
+                <h2 class="h2bottompad">Organization Name</h2>
+                <p>{{user.organizationName}}</p>
+            </a>
+            <a href="#" class="item item-avatar">
+                <i class="icon ion-email"></i>
+                <h2>Email</h2>
+                <p>{{user.email}}</p>
+            </a>
+            <a href="#" class="item item-avatar">
+                <i class="icon ion-location"></i>
+                <h2>Address</h2>
+                <p>{{user.address}}</p>
+            </a>
+            <a href="#" class="item item-avatar">
+                <i class="icon ion-android-locate"></i>
+                <h2>Postal Code</h2>
+                <p>{{user.postalCode}}</p>
+            </a>
+            <a href="#" class="item item-avatar">
+                <i class="icon ion-android-contact"></i>
+                <h2>Point of Contact Name</h2>
+                <p>{{user.pocName}}</p>
+            </a>
+            <a href="#" class="item item-avatar">
+                <i class="icon ion-ios-telephone"></i>
+                <h2>Point of Contact Number</h2>
+                <p>{{user.pocNumber}}</p>
+            </a>
+
+        </div>
+        <button class="button button-block button-positive" ng-click="logout()">
+            Logout<i class="ion-log-out" style="padding-left:5px"></i>
+        </button>
+    </ion-content>
+</ion-view>
