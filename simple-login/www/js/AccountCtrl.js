@@ -12,6 +12,7 @@ angular.module('starter.controllers')
             }).then(function (response) {
                 console.log(response);
                 $scope.user = response.data;
+                $scope.originalUser = angular.copy($scope.user);
             });
 //            }
             $scope.logout = function () {
@@ -36,6 +37,7 @@ angular.module('starter.controllers')
                             }
                         }).then(function (response) {
                             if (response.data.isUpdated) {
+                                $scope.originalUser = angular.copy($scope.user);
                                 $state.go('tab.account');
                             } else {
                                 $scope.errorList = response.data.errorList;
@@ -58,8 +60,11 @@ angular.module('starter.controllers')
                     }
                 });
             }
-
-
+            
+            $scope.cancel = function () {
+                $scope.user = angular.copy($scope.originalUser);
+                $scope.modal.hide();
+            }
             $ionicModal.fromTemplateUrl('/templates/editModal.html', {
                 scope: $scope,
                 animation: 'slide-in-up'

@@ -1,0 +1,27 @@
+<ion-view view-title="Jobs">
+    <ion-nav-buttons side="secondary">
+        <button class="button button-clear button-positive" ng-click="openModal()">Edit <i class="ion-compose" style="padding-left:2px"></i></button>
+    </ion-nav-buttons>
+    <ion-content>
+        <ul class="list">
+            <li class="item item-text-wrap item-button-right" ng-repeat="job in jobList">
+                    <!--<div class="buttons">-->
+<!--                    <button class="button button-energized">
+                        <i class="icon ion-android-locate"></i>
+                    </button>-->
+<!--                    <button class="button button-dark">
+                        <i class="icon ion-android-arrow-forward"></i>
+                    </button>-->
+<!--                </div>-->
+                    <h3>Item Name <p>{{job.demand.supply.itemName}}</p></h3>
+                    <h3>Supplier <p>{{job.demand.supply.user.organizationName}}: 700 Lorong 1 Toa Payoh #17-02 Singapore 319773</p></h3>
+                    <h3>Receiver <p>{{job.demand.user.organizationName}}</p></h3>
+                    <h3>Quantity <p>{{job.demand.quantityDemanded}}</p></h3>
+                    <h3>Expiry Date <p>{{job.expiryDate}}</p></h3>
+
+                <!--$scope.tableColumns = ['demand.supply.itemName', 'demand.supply.user.organizationName', 'demand.user.organizationName', 'demand.quantityDemanded', 'expiryDate'];-->
+
+            </li>
+        </ul>
+    </ion-content>
+</ion-view>
