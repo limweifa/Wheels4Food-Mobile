@@ -71,34 +71,34 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
 
                     // Each tab has its own nav history stack:
 
-                    .state('tab.dash', {
-                        url: '/dash',
-                        views: {
-                            'tab-dash': {
-                                templateUrl: 'templates/tab-dash.html',
-//                                controller: 'DashCtrl'
-                            }
-                        }
-                    })
+//                    .state('tab.dash', {
+//                        url: '/dash',
+//                        views: {
+//                            'tab-dash': {
+//                                templateUrl: 'templates/tab-dash.html',
+////                                controller: 'DashCtrl'
+//                            }
+//                        }
+//                    })
 
-                    .state('tab.chats', {
-                        url: '/chats',
-                        views: {
-                            'tab-chats': {
-                                templateUrl: 'templates/tab-chats.html',
-                                controller: 'ChatsCtrl'
-                            }
-                        }
-                    })
-                    .state('tab.chat-detail', {
-                        url: '/chats/:chatId',
-                        views: {
-                            'tab-chats': {
-                                templateUrl: 'templates/chat-detail.html',
-                                controller: 'ChatDetailCtrl'
-                            }
-                        }
-                    })
+//                    .state('tab.chats', {
+//                        url: '/chats',
+//                        views: {
+//                            'tab-chats': {
+//                                templateUrl: 'templates/tab-chats.html',
+//                                controller: 'ChatsCtrl'
+//                            }
+//                        }
+//                    })
+//                    .state('tab.chat-detail', {
+//                        url: '/chats/:chatId',
+//                        views: {
+//                            'tab-chats': {
+//                                templateUrl: 'templates/chat-detail.html',
+//                                controller: 'ChatDetailCtrl'
+//                            }
+//                        }
+//                    })
 
 //                    .state('tab.account', {
 //                        //url: '/account',
@@ -172,7 +172,8 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
 
         .config(['apiProvider',
             function (apiProvider) {
-                apiProvider.setAPIEndpoints('http://localhost:8100');
-                //apiProvider.setAPIEndpoints('http://apps.greentransformationlab.com/Wheels4Food');
+                //localhost:8100 for testing on ionic serve
+//                apiProvider.setAPIEndpoints('http://localhost:8100');
+                apiProvider.setAPIEndpoints('http://apps.greentransformationlab.com/Wheels4Food');
             }
         ]);

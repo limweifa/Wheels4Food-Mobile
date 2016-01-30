@@ -65,7 +65,7 @@ angular.module('starter.controllers')
                 $scope.user = angular.copy($scope.originalUser);
                 $scope.modal.hide();
             }
-            $ionicModal.fromTemplateUrl('/templates/editModal.html', {
+            $ionicModal.fromTemplateUrl('templates/editModal.html', {
                 scope: $scope,
                 animation: 'slide-in-up'
             }).then(function (modal) {

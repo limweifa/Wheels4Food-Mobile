@@ -44,7 +44,7 @@
 //                                        role: response.data.user.role
 //                                    });
 
-                                    $state.go('tab.dash');
+                                    $state.go('tab.jobs');
                                     $scope.$parent.isLoggedIn = true;
                                 } else {
                                    // $scope.signInText = 'Sign In';

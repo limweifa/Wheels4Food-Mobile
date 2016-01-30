@@ -4,7 +4,7 @@
 	"proxies": [
     {
       "path": "/rest",
-			"proxyUrl": "http://localhost:8084/Wheels4Food/rest"
+			"proxyUrl": "http://apps.greentransformationlab.com/Wheels4Food/rest"
     }
   ]
 }

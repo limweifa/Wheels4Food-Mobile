@@ -20,12 +20,12 @@
                     <!--<span class="input-label">Username</span>-->
                     <input type="text" name="username" placeholder="Username" ng-model="data.username" required>
                 </label>
-                <div class="form-errors" ng-show="loginForm.username.$touched && loginForm.username.$invalid" ng-messages="loginForm.username.$error" ng-messages-include="/templates/formErrorMessages.html"></div>
+                <div class="form-errors" ng-show="loginForm.username.$touched && loginForm.username.$invalid" ng-messages="loginForm.username.$error" ng-messages-include="templates/formErrorMessages.html"></div>
                 <label class="item item-input" ng-class="{'has-error' : loginForm.password.$touched && loginForm.password.$invalid}">
                     <!--<span class="input-label">Password</span>-->
                     <input type="password" name="password" placeholder="Password" ng-model="data.password" required>
                 </label>
-                <div class="form-errors" ng-show="loginForm.password.$touched && loginForm.password.$invalid" ng-messages="loginForm.password.$error" ng-messages-include="/templates/formErrorMessages.html"></div>
+                <div class="form-errors" ng-show="loginForm.password.$touched && loginForm.password.$invalid" ng-messages="loginForm.password.$error" ng-messages-include="templates/formErrorMessages.html"></div>
                 <li class="item item-toggle">
                     Remember Me
                     <label class="toggle toggle-positive">

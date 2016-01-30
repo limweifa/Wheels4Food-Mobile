@@ -9,18 +9,20 @@
 <!--                    <button class="button button-energized">
                         <i class="icon ion-android-locate"></i>
                     </button>-->
-<!--                    <button class="button button-dark">
+                    <button class="button button-dark" ng-click="view(job)">
                         <i class="icon ion-android-arrow-forward"></i>
-                    </button>-->
+                    </button>
 <!--                </div>-->
-                    <h3>Item Name <p>{{job.demand.supply.itemName}}</p></h3>
-                    <h3>Supplier <p>{{job.demand.supply.user.organizationName}}: 700 Lorong 1 Toa Payoh #17-02 Singapore 319773</p></h3>
-                    <h3>Receiver <p>{{job.demand.user.organizationName}}</p></h3>
+                    <h3>{{job.demand.supply.itemName}}</h3>
+                    <h3>{{job.demand.quantityDemanded}} pcs</h3>
+                    <p style=" line-height:120%">From: {{job.demand.supply.user.address}}</p>
+                    <p style=" line-height:120%">To: {{job.demand.user.address}}</p>
+<!--                    <h3>Receiver <p>{{job.demand.user.organizationName}}</p></h3>
                     <h3>Quantity <p>{{job.demand.quantityDemanded}}</p></h3>
-                    <h3>Expiry Date <p>{{job.expiryDate}}</p></h3>
+                    <h3>Expiry Date <p>{{job.expiryDate}}</p></h3>-->
 
                 <!--$scope.tableColumns = ['demand.supply.itemName', 'demand.supply.user.organizationName', 'demand.user.organizationName', 'demand.quantityDemanded', 'expiryDate'];-->
-
+<!--{{job.demand.supply.user.organizationName}}-->
             </li>
         </ul>
     </ion-content>
