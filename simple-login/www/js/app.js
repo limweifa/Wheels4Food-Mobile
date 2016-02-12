@@ -173,7 +173,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
         .config(['apiProvider',
             function (apiProvider) {
                 //localhost:8100 for testing on ionic serve
-//                apiProvider.setAPIEndpoints('http://localhost:8100');
-                apiProvider.setAPIEndpoints('http://apps.greentransformationlab.com/Wheels4Food');
+                apiProvider.setAPIEndpoints('http://localhost:8100');
+                //apiProvider.setAPIEndpoints('http://apps.greentransformationlab.com/Wheels4Food');
             }
         ]);

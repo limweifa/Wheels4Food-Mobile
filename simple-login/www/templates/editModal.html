@@ -1,7 +1,8 @@
 <ion-modal-view>
     <ion-header-bar>
         <h1 class="title">Edit Profile</h1>
-        <button class="button button-clear" ng-click="cancel()">Cancel</button>
+         <button class="button button-clear" ng-click="cancel()">Cancel</button>
+        <button class="button button-clear" ng-click="updateProfile()">Done</button>
     </ion-header-bar>
     <ion-content>
         <div class="list">
@@ -19,7 +20,7 @@
                 <input type="text" value="{{user.email}}" ng-model="user.email">
             </label>
             <label class="item item-input item-stacked-label">
-                <span class="input-label">Address</span>
+                <span class="input-label">Organisation's Address</span>
                 <input type="text" value="{{user.address}}" ng-model="user.address">
             </label>
             <label class="item item-input item-stacked-label">
@@ -36,8 +37,10 @@
             </label>
         </div>
 
+        <!--
         <button class="button button-block button-positive" ng-click="updateProfile()">
             Update Profile
         </button>
+        -->
     </ion-content>
 </ion-modal-view>
