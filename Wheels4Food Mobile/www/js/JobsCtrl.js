@@ -174,6 +174,7 @@ angular.module('starter.controllers')
                     $scope.timePickerDeliverCallback(val);
                 }
             };
+            console.log("hello");
             
             //View Job Details Modal
             $ionicModal.fromTemplateUrl('templates/viewJobDetails.html', {
