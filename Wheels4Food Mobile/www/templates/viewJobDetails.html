@@ -1,0 +1,86 @@
+<ion-modal-view class="view-job-details">
+    <ion-header-bar>
+        <h1 class="title">Job Details</h1>
+        <button class="button button-clear" ng-click="closeModal()">Cancel</button>
+    </ion-header-bar>
+    <ion-content>
+<!--        <div class="row">
+            <div class="col col-35"><strong>Item Name</strong></div>
+                <div class="col"><p>{{currentJob.demand.supply.itemName}}</p></div>
+            </div>
+        <div class="row">
+            <div class="col col-35"><strong>Quantity</strong></div>
+            <div class="col" style="text-align:right"><p>{{currentJob.demand.quantityDemanded}} pcs</p></div>
+            </div>
+        <div class="row">
+            <div class="col col-35"><strong>Supplying Organization</strong></div>
+            <div class="col" style="text-align:right"><p>{{currentJob.demand.supply.user.address}}, {{currentJob.demand.supply.user.address}}</p></div>
+            </div>-->
+        <div class="list">
+            <label class="item">
+                <h3>Item Name</h3><p>{{currentJob.demand.supply.itemName}}</p>
+                <h3>Quantity</h3><p>{{currentJob.demand.quantityDemanded}} pcs</p>
+                <h3>Supplying Organization</h3> <p>{{currentJob.demand.supply.user.address}}, {{currentJob.demand.supply.user.address}}</p>
+                <h3>Receiving Organizationn</h3> <p>{{currentJob.demand.user.organizationName}}, {{currentJob.demand.user.address}}</p>
+                <h3>Job valid until</h3> <p>{{currentJob.expiryDate}}</p>
+
+            </label>
+
+            <div class="item item-divider" style="text-align: center">
+                Available Slots
+            </div>
+
+            <div class="row">
+                <div class="col"></div>
+                <div class="col" style="text-align:center">9am to 12pm</div>
+                <div class="col" style="text-align:center">2pm to 5pm</div>
+            </div>
+            <div class="row" ng-repeat="slot in availableSlots">
+                <div class="col" style="text-align:center">{{slot.amSlot.date| date:'dd MMM yyyy'}}</div>
+
+                <div class="col"><ion-radio ng-model="$parent.selectedSlot" ng-value="slot.amSlot" ng-click="selectSlot($parent.selectedSlot)" ng-disabled="!slot.amSlot.isAvailable" ng-class="{'radio-disabled': !slot.amSlot.isAvailable}" ></ion-radio></div>
+                <div class="col"><ion-radio ng-model="$parent.selectedSlot" ng-value="slot.pmSlot" ng-click="selectSlot($parent.selectedSlot)" ng-disabled="!slot.pmSlot.isAvailable" ng-class="{'radio-disabled': !slot.pmSlot.isAvailable}"></ion-radio></div>
+            </div>
+
+            <div ng-show="hasSelection" style="text-align:center">You have selected <strong>{{selectedSlot.date| date:'dd MMM yyyy'}}</strong>, <strong>{{selectedSlot.period}}</strong>. </div>
+            <div ng-show="hasSelection" style="text-align:center">Please indicate your pickup and delivery timing: </div>             
+            <div class="item item-input-inset">
+
+                <label class="item-input-wrapper">
+                    <span class="input-label">Pickup</span> <input type="text" placeholder="Indicate pickup time" value="{{collectionTimeTwelveHours}}">
+                </label>
+                <ionic-timepicker input-obj="timePickerObjectPickup">
+                    <button class="button button-small button-positive">
+                        Select
+                        <standard-time-meridian etime='timePickerObjectPickup.inputEpochTime'></standard-time-meridian>
+                    </button>
+                </ionic-timepicker>
+            </div>
+
+            <div class="item item-input-inset">
+                <label class="item-input-wrapper">
+                    <span class="input-label">Delivery</span> <input type="text" placeholder="Indicate delivery time" value="{{deliveryTimeTwelveHours}}">
+                </label>
+                <ionic-timepicker input-obj="timePickerObjectDeliver">
+                    <button class="button button-small button-positive overflowShow">
+                        Select
+                        <standard-time-meridian etime='timePickerObjectDeliver.inputEpochTime'></standard-time-meridian>
+                    </button>
+                </ionic-timepicker>
+            </div>
+
+        </div>
+        <!--        <ionic-timepicker input-obj="timePickerObjectPickup">
+                    <button class="button button-block button-positive overflowShow">
+                        <standard-time-meridian etime='timePickerObjectPickup.inputEpochTime'></standard-time-meridian>
+                    </button>
+                </ionic-timepicker>
+                Your selected time is : {{collectionTime}}-->
+
+        <button class="button button-block button-positive" ng-click="">
+            Help Now!  
+        </button>
+
+
+    </ion-content>
+</ion-modal-view>

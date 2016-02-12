@@ -1,0 +1,125 @@
+/** Styling for the username field **/
+label.item.has-error {  
+  border-top: 2px solid red;
+  border-bottom: 2px solid red;
+  border-left: 2px solid red;
+  border-right: 2px solid red;
+}
+
+/** Styling for the password field when an error exists**/
+label.item.has-error-lr {  
+  border-left: 2px solid red;
+  border-right: 2px solid red;
+}
+
+/** Styling for the password field when an error has been resolved**/
+label.item.valid-lr {  
+  border-left: 2px solid green;
+  border-right: 2px solid green;
+}
+
+/** Styling for the error text and container **/
+.form-errors {
+  margin: 0px 0;
+}
+.form-error {
+  padding: 2px 0 2px 16px;
+  color: red;
+}
+
+.padding-top-custom {
+    padding-top: 50px;
+}
+
+/*Additonal ionic stuff*/
+.account-view .item-avatar{
+    padding-left: 60px;
+}
+
+.account-view .item-avatar i:first-child, .item-avatar .item-img {
+    position: absolute;
+    top: 20px;
+    left: 10px;
+    font-size: 36px;
+    max-width: 40px;
+    max-height: 40px;
+    width: 100%;
+    border-radius: 4px; 
+    text-align: center;
+}
+
+.account-view h2{
+    padding: 0 0 1px 0;
+}
+
+/*    position: absolute;
+    top: 16px;
+    left: 16px;
+    max-width: 40px;
+    max-height: 40px;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%; }*/
+
+// ###############view job details##########
+.view-job-details .item-radio {
+  padding: 0; }
+  .item-radio:hover {
+    cursor: pointer; }
+
+.view-job-details .item-radio .item-content {
+  /* give some room to the right for the checkmark icon */
+  padding-right: 0px; 
+}
+
+.view-job-details .item-radio.radio-disabled .item-content {
+background: #b3b3b3;
+}
+
+.view-job-details .item-radio .radio-icon {
+  /* checkmark icon will be hidden by default */
+  position: absolute;
+  top: 0;
+  right: 0px;
+  z-index: 3;
+  visibility: hidden;
+  padding: 0px;
+  height: 100%;
+  font-size: 24px;
+/*    left: 0px;
+margin-left: auto;
+margin-right: auto;*/
+}
+
+.view-job-details .item-radio input {
+  /* hide any radio button inputs elements (the ugly circles) */
+  position: absolute;
+  left: -9999px; }
+  .view-job-details .item-radio input:checked + .radio-content .item-content {
+    /* style the item content when its checked */
+    background: #00e600; }
+
+  .view-job-details .item-radio input:checked + .radio-content .radio-icon {
+    /* show the checkmark icon when its checked */
+    visibility: hidden; 
+    
+    .button {
+  border-color: transparent;
+  background-color: #ED5565;
+  color: #444;
+  position: relative;
+  display: inline-block;
+  margin: 0;
+  padding: 0 12px;
+  min-width: 52px;
+  min-height: 47px;
+  border-width: 1px;
+  border-style: solid;
+  border-radius: 4px;
+  vertical-align: top;
+  text-align: center;
+  text-overflow: ellipsis;
+  font-size: 16px;
+  line-height: 42px;
+  cursor: pointer; }
+}
