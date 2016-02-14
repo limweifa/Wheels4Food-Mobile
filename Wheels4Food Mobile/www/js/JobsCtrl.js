@@ -209,6 +209,10 @@ angular.module('starter.controllers')
             $scope.$on('modal.removed', function () {
                 // Execute action
             });
+            
+            $scope.goToMap = function(){
+                $state.go('maps');
+            };
 
         })
         ;
