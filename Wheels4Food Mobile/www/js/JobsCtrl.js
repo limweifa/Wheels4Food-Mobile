@@ -16,6 +16,7 @@ angular.module('starter.controllers')
             });
 
             $scope.view = function (job) {
+                
                 $http({
                     url: api.endpoint + 'GetJobByIdRequest/' + job.id,
                     method: 'GET',
@@ -96,7 +97,7 @@ angular.module('starter.controllers')
                         $scope.hasSelection = true;
                     };
 
-                    $scope.timePickerPickupCallback= function(val) {
+                    $scope.timePickerPickupCallback = function (val) {
                         if (typeof (val) === 'undefined') {
                             console.log('Time not selected');
                         } else {
@@ -106,8 +107,8 @@ angular.module('starter.controllers')
                             $scope.collectionTimeTwelveHours = $filter('date')(selectedTime, 'hh:mm a');
                         }
                     }
-                    
-                    $scope.timePickerDeliverCallback= function(val) {
+
+                    $scope.timePickerDeliverCallback = function (val) {
                         if (typeof (val) === 'undefined') {
                             console.log('Time not selected');
                         } else {
@@ -118,35 +119,42 @@ angular.module('starter.controllers')
                         }
                     }
 
-                    $http({
-                        url: api.endpoint + 'AcceptJobRequest',
-                        method: 'PUT',
-                        data: {
-                            'jobID': job.id,
-                            'userID': $scope.userID,
-                            'deliveryDate': $scope.deliveryDate,
-                            'collectionTime': $scope.collectionTime,
-                            'deliveryTime': $scope.deliveryTime
-                        },
-                        headers: {
-                            'Content-Type': 'application/json',
-                        }
-                    }).then(function (response) {
-                        if (response.data.isAccepted) {
-                            ngDialog.openConfirm({
-                                template: '/Wheels4Food/resources/ngTemplates/acceptJobSuccess.html',
-                                className: 'ngdialog-theme-default dialog-generic',
-                                scope: $scope
-                            }).then(function () {
-                                $state.go('MyJobs');
-                            });
-                        }
-                    });
-
                 });
                 $scope.modal.show();
             };
-            
+
+            $scope.acceptJob = function (job) {
+                console.log("In accept job method liao")
+                $http({
+                    url: api.endpoint + 'AcceptJobRequest',
+                    method: 'PUT',
+                    data: {
+                        'jobID': job.id,
+                        'userID': $scope.userID,
+                        'deliveryDate': $scope.deliveryDate,
+                        'collectionTime': $scope.collectionTime,
+                        'deliveryTime': $scope.deliveryTime
+                    },
+                    headers: {
+                        'Content-Type': 'application/json',
+                    }
+                }).then(function (response) {
+                    if (response.data.isAccepted) {
+                        $scope.modal.hide();
+                        $scope.showAlert = function() {  
+                            var acceptJobPopup = $ionicPopup.alert({
+                              title: 'Job Accepted',
+                              template: 'Thank you for helping out! View '
+                            });
+
+//                            acceptJobPopup.then(function(res) {
+//                              $state.go('MyJobs');
+//                            });
+                        };
+                    }
+                });
+            };
+
             $scope.timePickerObjectPickup = {
                 inputEpochTime: ((new Date()).getHours() * 60 * 60), //Optional
                 step: 10, //Optional
@@ -160,7 +168,7 @@ angular.module('starter.controllers')
                     $scope.timePickerPickupCallback(val);
                 }
             };
-            
+
             $scope.timePickerObjectDeliver = {
                 inputEpochTime: ((new Date()).getHours() * 60 * 60), //Optional
                 step: 10, //Optional
@@ -175,7 +183,7 @@ angular.module('starter.controllers')
                 }
             };
             console.log("hello");
-            
+
             //View Job Details Modal
             $ionicModal.fromTemplateUrl('templates/viewJobDetails.html', {
                 scope: $scope,

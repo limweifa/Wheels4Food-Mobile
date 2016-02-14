@@ -1,0 +1,53 @@
+<ion-modal-view class="view-myjob-details">
+    <ion-header-bar>
+        <h1 class="title">Job Details</h1>
+        <button class="button button-clear" ng-click="closeModal()">Cancel</button>
+    </ion-header-bar>
+    <ion-content>
+        <div class="list card">
+
+            <label class="item item-input item-stacked-label">
+                <span class="input-label">Item Name</span>
+                <input type="text" value="{{currentJob.demand.supply.itemName}}">
+            </label>
+            <label class="item item-input item-stacked-label">
+                <span class="input-label">Quantity Demanded</span>
+                <input type="text" value="{{currentJob.demand.quantityDemanded}}">
+            </label>
+            <label class="item item-input item-stacked-label">
+                <span class="input-label">Supplying Organization</span>
+                <input type="text" value="{{currentJob.demand.supply.user.organizationName}}">
+                <p>{{currentJob.demand.supply.user.address}}</p>
+            </label>
+            <label class="item item-input item-stacked-label">
+                <span class="input-label">Supplying Organization</span>
+                <input type="text" value="{{currentJob.demand.user.organizationName}}">
+                <p>{{currentJob.demand.user.address}}</p>
+            </label>
+            <label class="item item-input item-stacked-label">
+                <span class="input-label">Point of Contact Name</span>
+                <input type="text" value="{{currentJob.demand.supply.user.pocName}}">
+            </label>
+            <label class="item item-input item-stacked-label">
+                <span class="input-label">Point of Contact Number</span>
+                <input type="text" value="{{currentJob.demand.supply.user.pocNumber}}">
+            </label>
+            <label class="item item-input item-stacked-label">
+                <span class="input-label">Delivery Date</span>
+                <input type="text" value="{{currentJob.deliveryDate}}">
+            </label>
+            <label class="item item-input item-stacked-label">
+                <span class="input-label">Pickup Time</span>
+                <input type="text" value="{{currentJob.collectionTime}}">
+            </label>
+            <label class="item item-input item-stacked-label">
+                <span class="input-label">Delivery Time</span>
+                <input type="text" value="{{currentJob.deliveryTime}}">
+            </label>
+        </div>
+        <button class="button button-block button-assertive" ng-click="cancelJob(currentJob)">
+            Cancel Job
+        </button>
+    </ion-content>
+</ion-modal-view>
+

@@ -145,6 +145,16 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
                             }
                         }
                     })
+                    
+                    .state('tab.myjobs', {
+                        url: '/myjobs',
+                        views: {
+                            'myjobs': {
+                                templateUrl: 'templates/myjobs.html',
+                                controller: 'MyJobsCtrl'
+                            }
+                        }
+                    })
 
             // if none of the above states are matched, use this as the fallback
             $urlRouterProvider.otherwise('/login');
