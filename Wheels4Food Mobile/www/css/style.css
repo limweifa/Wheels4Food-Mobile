@@ -1,21 +1,21 @@
 /** Styling for the username field **/
 label.item.has-error {  
-  border-top: 2px solid red;
-  border-bottom: 2px solid red;
-  border-left: 2px solid red;
-  border-right: 2px solid red;
+  border-top: 2px solid #C91F37;
+  border-bottom: 2px solid #C91F37;
+  border-left: 2px solid #C91F37;
+  border-right: 2px solid #C91F37;
 }
 
 /** Styling for the password field when an error exists**/
 label.item.has-error-lr {  
-  border-left: 2px solid red;
-  border-right: 2px solid red;
+  border-left: 2px solid #C91F37;
+  border-right: 2px solid #C91F37;
 }
 
 /** Styling for the password field when an error has been resolved**/
 label.item.valid-lr {  
-  border-left: 2px solid green;
-  border-right: 2px solid green;
+  border-left: 2px solid #26C281;
+  border-right: 2px solid #26C281;
 }
 
 /** Styling for the error text and container **/
@@ -48,81 +48,406 @@ label.item.valid-lr {
     text-align: center;
 }
 
+
 .account-view h2{
     padding: 0 0 1px 0;
 }
 
-/*    position: absolute;
-    top: 16px;
-    left: 16px;
-    max-width: 40px;
-    max-height: 40px;
-    width: 100%;
-    height: 100%;
-    border-radius: 50%; }*/
+/* Top Navi Bar Title */
 
-/* ###############view job details##########*/
-.view-job-details .item-radio {
-  padding: 0; }
-  .item-radio:hover {
-    cursor: pointer; }
-
-.view-job-details .item-radio .item-content {
-  /* give some room to the right for the checkmark icon */
-  padding-right: 0px; 
+.bar.bar-stable .title {
+    color: #fff;
 }
 
-.view-job-details .item-radio.radio-disabled .item-content {
-background: #b3b3b3;
+.bar.bar-stable {
+    border-color: #f6bb42;
+    background-image: linear-gradient(0deg, #b2b2b2, #b2b2b2 50%, transparent 50%);
+    /* color: #ffffff; */
+    background-color: #f6bb42;
 }
 
-.view-job-details .item-radio .radio-icon {
-  /* checkmark icon will be hidden by default */
-  position: absolute;
-  top: 0;
-  right: 0px;
-  z-index: 3;
-  visibility: hidden;
-  padding: 0px;
-  height: 100%;
-  font-size: 24px;
-/*    left: 0px;
-margin-left: auto;
-margin-right: auto;*/
+.tabs-striped .tabs {
+    background-color: #f6bb42;
+    background-image: none;
+    border: none;
+    border-bottom: 1px solid #ddd;
+    padding-top: 2px;
 }
 
-.view-job-details .item-radio input {
-  /* hide any radio button inputs elements (the ugly circles) */
-  position: absolute;
-  left: -9999px; }
-  .view-job-details .item-radio input:checked + .radio-content .item-content {
-    /* style the item content when its checked */
-    background: #00e600; }
+.tabs-top.tabs-striped .tab-item.tab-item-active, .tabs-top.tabs-striped .tab-item.active, .tabs-top.tabs-striped .tab-item.activated {
+    margin-top: 1px;
+    border-width: 0px 0px 2px 0px !important;
+    border-style: solid;
+    border-color: #f6bb42;
+    border: none;
+}
 
-  .view-job-details .item-radio input:checked + .radio-content .radio-icon {
-    /* show the checkmark icon when its checked */
-    visibility: hidden; 
-    
-    .button {
-  border-color: transparent;
-  background-color: #ED5565;
-  color: #444;
+
+/*Container for images in Login Page*/
+div.container4 {
+    height: 10em;
+    position: relative }
+
+div.container4 p {
+    margin: 0;
+    /* background: yellow; */
+    position: absolute;
+    top: 150%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+    font-size: 36px;
+    font-weight: bolder;
+    color: black;
+}
+
+/*Login Page Card List*/
+.card, .list-inset {
+    overflow: hidden;
+    margin: 20px 10px;
+    border-radius: 2px;
+    background-color: transparent;
+}
+
+span.tab-title.ng-binding{
+    margin: 0;
+    padding: 0;
+    border: 0;
+    vertical-align: baseline;
+    font: inherit;
+    font-size: 100%;
+    color: white;
+}
+
+span.back-text {
+    color:white;
+}
+
+/*POP-UP CSS*/
+
+.popup-head {
+  padding: 10px;
+  border-bottom: none; 
+  
+}
+
+.popup-title {
+    color: black;
+ 
+}
+
+.popup-body {
+  padding: 15px;
+  overflow: scroll;
+  text-align: center;
+  color: black;
+  background-color: whitesmoke;
+}
+
+.popup-buttons {
+  display: -webkit-boX;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -moz-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-direction: normal;
+  -webkit-box-orient: horizontal;
+  -webkit-flex-direction: row;
+  -moz-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  padding: 10px;
+  min-height: 65px; 
+  background: #E6E9ED;
+}
+  .popup-buttons .button {
+    -webkit-box-flex: 1;
+    -webkit-flex: 1;
+    -moz-box-flex: 1;
+    -moz-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+    display: block;
+    min-height: 45px;
+    border-radius: 2px;
+    line-height: 20px;
+    margin-right: 5px; }
+    .popup-buttons .button:last-child {
+      margin-right: 0px; }
+
+.popup-open {
+  pointer-events: none; 
+}
+
+.popup-open.modal-open .modal {
+    pointer-events: none; 
+}
+  
+.popup-open .popup-backdrop, .popup-open .popup {
+    pointer-events: auto; 
+}
+  
+.button .icon {
+    vertical-align: top;
+    pointer-events: none;
+    color: white;
+}
+
+.input-label {
+    display: table;
+    padding: 7px 10px 7px 0px;
+    max-width: 200px;
+    width: 35%;
+    color: #444;
+    font-size: 16px;
+    font-weight: bolder;
+}
+
+.button.button-positive.button-clear {
+    border-color: transparent;
+    background: none;
+    box-shadow: none;
+    color: #fff;
+}
+
+.tabs{
+    padding-top: 2px;
+    border-top: none !important;
+    border-bottom: none;
+    background-position: top;
+    background-size: 100% 1px;
+    background-repeat: no-repeat;
+    background-color: #f6bb42;
+}
+
+/*Navigation Tab Icons*/
+.ion-eye:before {
+    content: "";
+    color: white;
+}
+
+.ion-android-person:before {
+    content: "";
+    color: white;
+}
+
+.ion-briefcase:before {
+  content: ""; 
+  color: white;
+}
+
+.ion-log-out:before {
+    content: "";
+    color: white;
+}
+
+/*Profile Pic*/
+.img-circle {
+    border-radius: 50%;
+}
+
+.h1-title {
+   font-family: 'League Spartan', sans-serif;
+   font-weight: bold;
+   font-size: 35px;
+}
+
+.profile-center{
+    background: white;
+}
+
+p {
+    margin: 0 0 0 0;
+}
+
+.button.button-block, .button.button-full {
+    margin-top: 0px; 
+}
+
+.button.button-forgetpw {
+    border-color: #34495e;
+    background-color: transparent;
+    color: #34495e;
+}
+
+item item-text-wrap-login {
+    font-size: 100px;
+}
+
+/* Flat Buttons */
+
+/* Google Fonts */
+@import url(http://fonts.googleapis.com/css?family=Open+Sans);
+
+/* set global font to Open Sans */
+body {
+  font-family: 'Open Sans', 'sans-serif';
+  background-image: url(http://benague.ca/files/pw_pattern.png);
+}
+
+.link:hover {
+  color: #2ecc71;
+  border-bottom: 2px dotted #2ecc71;
+}
+
+/* button div */
+#buttons {
+  padding-top: 50px;
+  text-align: center;
+}
+
+/* start da css for da buttons */
+.btn {
+  border-radius: 4px;
+  padding: 0px 0px;
+  font-size: 16px;
+  text-decoration: none;
+  margin: 0px;
+  color: #fff;
   position: relative;
   display: inline-block;
-  margin: 0;
-  padding: 0 12px;
-  min-width: 52px;
-  min-height: 47px;
-  border-width: 1px;
-  border-style: solid;
-  border-radius: 4px;
-  vertical-align: top;
-  text-align: center;
-  text-overflow: ellipsis;
-  font-size: 16px;
-  line-height: 42px;
-  cursor: pointer; }
 }
+
+.btn-forgetpw {
+  border-radius: 5px;
+  padding: 0px 25px;
+  font-size: 16px;
+  text-decoration: none;
+  margin: 0px;
+  color: #fff;
+  position: relative;
+  display: inline-block;
+}
+
+.btn-signup {
+  border-radius: 5px;
+  padding: 25px 25px;
+  font-size: 16px;
+  text-decoration: none;
+  margin: 20px;
+  color: #fff;
+  position: relative;
+  display: inline-block;
+}
+
+.btn-helpnow {
+  border-radius: 3px;
+  padding: 5px 5px;
+  font-size: 16px;
+  text-decoration: none;
+  color: #fff;
+  position: relative;
+  display: inline-block;
+}
+
+.btn-timepicker {
+  border-radius: 0px;
+  padding: 0px 0px;
+  font-size: 15px;
+  text-decoration: none;
+  margin: 0px;
+  color: #fff;
+  position: relative;
+  display: inline-block;
+  padding: 2px 4px 1px;
+  min-width: 28px;
+  min-height: 30px;
+  font-size: 12px;
+  line-height: 20px;
+}
+
+.btn:active {
+  transform: translate(0px, 5px);
+  -webkit-transform: translate(0px, 5px);
+  box-shadow: 0px 1px 0px 0px;
+}
+
+.blue {
+  background-color: #4FC1E9;
+  box-shadow: 0px 5px 0px 0px #3BAFDA;
+}
+
+.blue:hover {
+  background-color: #3BAFDA;
+}
+
+.green {
+  background-color: #48CFAD;
+  box-shadow: 0px 5px 0px 0px #37BC9B;
+}
+
+.green:hover {
+  background-color: #37BC9B;
+}
+
+.red {
+  background-color: #e74c3c;
+  box-shadow: 0px 5px 0px 0px #CE3323;
+}
+
+.red:hover {
+  background-color: #FF6656;
+}
+
+.purple {
+  background-color: #9b59b6;
+  box-shadow: 0px 5px 0px 0px #82409D;
+}
+
+.purple:hover {
+  background-color: #B573D0;
+}
+
+.orange {
+  background-color: #e67e22;
+  box-shadow: 0px 5px 0px 0px #CD6509;
+}
+
+.orange:hover {
+  background-color: #FF983C;
+}
+
+.yellow {
+  background-color: #f1c40f;
+  box-shadow: 0px 5px 0px 0px #D8AB00;
+}
+
+.yellow:hover {
+  background-color: #FFDE29;
+}
+
+.ion-header-bar-jobdetails {
+    background: #656D78;
+}
+
+.header-jobdetails {
+    background: red;
+    padding: 0px 5px 0px 0px;
+}
+
+.item-radio .radio-icon {
+    position: absolute;
+    top: -5px;
+    right: 0px;
+    z-index: 10;
+    visibility: hidden;
+    padding: 10px;
+    height: 130%;
+    font-size: 15px;
+    background:#48CFAD;
+    color: white;
+}
+
+.png-icon{
+    margin: 0px auto auto;
+    padding: 0;
+    display: inline-block;
+    background-repeat: no-repeat no-repeat;
+    pointer-events: none;
+    left: 16px;
+}
+
 
 /*Maps css*/
 #map {

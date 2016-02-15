@@ -5,7 +5,7 @@
 // the 2nd parameter is an array of 'requires'
 // 'starter.services' is found in services.js
 // 'starter.controllers' is found in controllers.js
-angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', 'ngMessages', 'ionic-timepicker','ngCordova', 'uiGmapgoogle-maps'])
+angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', 'ngMessages', 'ionic-timepicker', 'ngCordova', 'uiGmapgoogle-maps'])
 
         .run(function ($ionicPlatform) {
             $ionicPlatform.ready(function () {
@@ -133,7 +133,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
                             }
                         }
                     })
-                    
+
                     .state('tab.jobs', {
                         url: '/jobs',
 //                        templateUrl: 'templates/account.html',
@@ -145,7 +145,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
                             }
                         }
                     })
-                    
+
                     .state('tab.myjobs', {
                         url: '/myjobs',
                         views: {
@@ -155,7 +155,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
                             }
                         }
                     })
-                    
+
                     .state('maps', {
                         url: '/maps',
                         templateUrl: 'templates/maps.html',
@@ -191,6 +191,12 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
                 //http://localhost:8100 for ionic serve testing
                 apiProvider.setAPIEndpoints('http://localhost:8100');
                 //http://apps.greentransformationlab.com/Wheels4Food for emulator and native mobile testing
-                //apiProvider.setAPIEndpoints('http://apps.greentransformationlab.com/Wheels4Food');
+//                apiProvider.setAPIEndpoints('http://apps.greentransformationlab.com/Wheels4Food');
             }
-        ]);
+        ])
+
+        .config(['$ionicConfigProvider', function ($ionicConfigProvider) {
+
+                $ionicConfigProvider.tabs.position('top'); // other values: top
+
+            }]);

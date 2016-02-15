@@ -16,14 +16,28 @@
             <div class="col col-35"><strong>Supplying Organization</strong></div>
             <div class="col" style="text-align:right"><p>{{currentJob.demand.supply.user.address}}, {{currentJob.demand.supply.user.address}}</p></div>
             </div>-->
-        <div class="list">
             <label class="item">
-                <h3>Item Name</h3><p>{{currentJob.demand.supply.itemName}}</p>
-                <h3>Quantity</h3><p>{{currentJob.demand.quantityDemanded}} pcs</p>
-                <h3>Supplying Organization</h3> <p>{{currentJob.demand.supply.user.organizationName}}, {{currentJob.demand.supply.user.address}}</p>
-                <h3>Receiving Organization</h3> <p>{{currentJob.demand.user.organizationName}}, {{currentJob.demand.user.address}}</p>
-                <h3>Job valid until</h3> <p>{{currentJob.expiryDate}}</p>
-
+                <a class="item item-icon-left" href="#">
+                     <i class="icon ion-ios-box"></i>
+                    <h3>Item Name</h3><p>{{currentJob.demand.supply.itemName}}</p>
+                </a>
+                <a class="item item-icon-left" href="#">
+                    <i class="icon ion-ios-calculator"></i>
+                    <h3>Quantity</h3><p>{{currentJob.demand.quantityDemanded}} pcs</p>
+                </a>
+                <a class="item item-icon-left" href="#">
+                    <i class="icon ion-ios-location"></i>
+                    <h3>Supplying Organization</h3> <p>{{currentJob.demand.supply.user.organizationName}}, {{currentJob.demand.supply.user.address}}</p> 
+                </a>
+                <a class="item item-icon-left" href="#">
+                    <i class="icon ion-ios-location"></i>
+                    <h3>Receiving Organization</h3> <p>{{currentJob.demand.user.organizationName}}, {{currentJob.demand.user.address}}</p> 
+                </a>
+                <a class="item item-icon-left" href="#">
+                    <i class="icon ion-calendar"></i>
+                    <h3>Job Valid Until</h3> <p>{{currentJob.expiryDate}}</p>
+                </a>
+               
             </label>
 
             <div class="item item-divider" style="text-align: center">
@@ -37,21 +51,26 @@
             </div>
             <div class="row" ng-repeat="slot in availableSlots">
                 <div class="col" style="text-align:center">{{slot.amSlot.date| date:'dd MMM yyyy'}}</div>
-
+                
                 <div class="col"><ion-radio ng-model="$parent.selectedSlot" ng-value="slot.amSlot" ng-click="selectSlot($parent.selectedSlot)" ng-disabled="!slot.amSlot.isAvailable" ng-class="{'radio-disabled': !slot.amSlot.isAvailable}" ></ion-radio></div>
                 <div class="col"><ion-radio ng-model="$parent.selectedSlot" ng-value="slot.pmSlot" ng-click="selectSlot($parent.selectedSlot)" ng-disabled="!slot.pmSlot.isAvailable" ng-class="{'radio-disabled': !slot.pmSlot.isAvailable}"></ion-radio></div>
             </div>
 
             <div ng-show="hasSelection" style="text-align:center">You have selected <strong>{{selectedSlot.date| date:'dd MMM yyyy'}}</strong>, <strong>{{selectedSlot.period}}</strong>. </div>
             <div ng-show="hasSelection" style="text-align:center">Please indicate your pickup and delivery timing: </div>             
+            <br>
             <div class="item item-input-inset">
 
                 <label class="item-input-wrapper">
-                    <span class="input-label">Pickup</span> <input type="text" placeholder="Indicate pickup time" value="{{collectionTimeTwelveHours}}">
+                    <span class="input-label">Pickup</span> 
+                    <ionic-timepicker input-obj="timePickerObjectPickup">
+                        <standard-time-meridian etime='timePickerObjectPickup.inputEpochTime'></standard-time-meridian>
+                        <input type="text" placeholder="Click to indicate time" value="{{collectionTimeTwelveHours}}">
+                    </ionic-timepicker>       
                 </label>
                 <ionic-timepicker input-obj="timePickerObjectPickup">
-                    <button class="button button-small button-positive">
-                        Select
+                    <button class="button button-small btn green">
+                        Select Time
                         <standard-time-meridian etime='timePickerObjectPickup.inputEpochTime'></standard-time-meridian>
                     </button>
                 </ionic-timepicker>
@@ -59,17 +78,22 @@
 
             <div class="item item-input-inset">
                 <label class="item-input-wrapper">
-                    <span class="input-label">Delivery</span> <input type="text" placeholder="Indicate delivery time" value="{{deliveryTimeTwelveHours}}">
+                    <span class="input-label">Delivery</span>
+                    <ionic-timepicker input-obj="timePickerObjectDeliver">
+                        <standard-time-meridian etime='timePickerObjectDeliver.inputEpochTime'></standard-time-meridian>
+                        <input type="text" placeholder="Click to indicate time" value="{{deliveryTimeTwelveHours}}">
+                    </ionic-timepicker>
+<!--                    <input type="text" placeholder="Indicate delivery time" value="{{deliveryTimeTwelveHours}}">-->
                 </label>
-                <ionic-timepicker input-obj="timePickerObjectDeliver">
+<!--                <ionic-timepicker input-obj="timePickerObjectDeliver">
                     <button class="button button-small button-positive overflowShow">
                         Select
                         <standard-time-meridian etime='timePickerObjectDeliver.inputEpochTime'></standard-time-meridian>
                     </button>
-                </ionic-timepicker>
+                </ionic-timepicker>-->
             </div>
 
-        </div>
+       
         <!--        <ionic-timepicker input-obj="timePickerObjectPickup">
                     <button class="button button-block button-positive overflowShow">
                         <standard-time-meridian etime='timePickerObjectPickup.inputEpochTime'></standard-time-meridian>
@@ -77,7 +101,7 @@
                 </ionic-timepicker>
                 Your selected time is : {{collectionTime}}-->
 
-        <button class="button button-block button-positive" ng-click="acceptJob(currentJob)">
+        <button class="button button-block btn-helpnow blue" ng-click="">
             Help Now!  
         </button>
 

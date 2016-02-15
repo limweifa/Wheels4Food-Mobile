@@ -1,5 +1,59 @@
 <ion-view view-title="Register" name="register-view">
-        <ion-content>
+    <ion-content>
+            
+            <!-- Added -->
+            <div class="list list-inset">
+                <label class="item item-input item-stacked-label">
+                      <center><img src="images/Wheels4Food.png" width="30%" height="30%"></center>
+                </label>
+                
+                <label class="item item-input item-stacked-label">
+                    <span class="input-label">Username</span>
+                    <input type="text" placeholder="Username" ng-model="registration.username">
+                </label>
+                
+                <label class="item item-input item-stacked-label">
+                    <span class="input-label">Password</span>
+                    <input type="text" placeholder="Password" ng-model="registration.password">
+                </label>
+                
+                <label class="item item-input item-stacked-label">
+                    <span class="input-label">Confirm Password</span>
+                    <input type="text" placeholder="Confirm Password" ng-model="registration.confirmPassword">
+                </label>
+                
+                <label class="item item-input item-select">
+                    <div class="input-label item-text-wrap">
+                    Organization Name
+                    </div>
+                    <select ng-model="registration.organizationName">
+                        <option ng-repeat="VWO in VWOList">{{VWO.organizationName}}</option>
+                    </select>
+                </label>
+                
+                <label class="item item-input item-stacked-label">
+                    <span class="input-label">Email</span>
+                    <input type="text" placeholder="Email" ng-model="registration.email">
+                </label>
+            
+                <label class="item item-input item-stacked-label">
+                    <span class="input-label">Full Name</span>
+                    <input type="text" placeholder="Full Name" ng-model="registration.pocName">
+                </label>
+                
+                <label class="item item-input item-stacked-label">
+                    <span class="input-label">Contact Number</span>
+                    <input type="text" placeholder="Contact Number" ng-model="registration.pocNumber">
+                </label>
+                <br>
+                <button class="button button-block btn green" ng-click="submit()">
+                    Sign Up Now!
+                </button>
+          </div>
+                 </div>
+            <!-- Added -->
+            
+            <!-- REMOVED  
           <div class="list">
             <label class="item item-input item-stacked-label">
               <span class="input-label">Username</span>
@@ -7,11 +61,11 @@
             </label>
             <label class="item item-input item-stacked-label">
               <span class="input-label">Password</span>
-              <input type="text" placeholder="Password" ng-model="registration.password">
+              <input type="password" placeholder="Password" ng-model="registration.password">
             </label>
             <label class="item item-input item-stacked-label">
               <span class="input-label">Confirm Password</span>
-              <input type="text" placeholder="Confirm Password" ng-model="registration.confirmPassword">
+              <input type="password" placeholder="Confirm Password" ng-model="registration.confirmPassword">
             </label>
             
             <label class="item item-input item-select">
@@ -39,5 +93,6 @@
               Register
             </button>
           </div>
+             REMOVED -->
         </ion-content>
 </ion-view>

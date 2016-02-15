@@ -12,21 +12,52 @@
     </ion-content>
 </ion-view>-->
 
-<ion-view view-title="Wheels4Food Login" name="login-view">
+<ion-view view-title="Login" name="login-view">
     <ion-content>
-        <form name="loginForm" novalidate="" ng-submit="login()">
-            <div class="list">
+        
+       <form name="loginForm" novalidate="" ng-submit="login()">
+            
+            <!-- Added -->
+            <div class="list list-inset">
+                <label>
+                    
+                    <center>
+                        
+                        <img src="images/Wheels4Food.png" width="50%" height="50%">
+                        
+                    </center>
+                    <br>
+                </label>
                 <label class="item item-input" ng-class="{'has-error' : loginForm.username.$touched && loginForm.username.$invalid}">
-                    <!--<span class="input-label">Username</span>-->
+                    <i class="icon ion-person padding-right"></i><br>
                     <input type="text" name="username" placeholder="Username" ng-model="data.username" required>
                 </label>
                 <div class="form-errors" ng-show="loginForm.username.$touched && loginForm.username.$invalid" ng-messages="loginForm.username.$error" ng-messages-include="templates/formErrorMessages.html"></div>
+                <br>
                 <label class="item item-input" ng-class="{'has-error' : loginForm.password.$touched && loginForm.password.$invalid}">
+                    <i class="icon ion-locked padding-right"></i><br>
                     <!--<span class="input-label">Password</span>-->
                     <input type="password" name="password" placeholder="Password" ng-model="data.password" required>
                 </label>
                 <div class="form-errors" ng-show="loginForm.password.$touched && loginForm.password.$invalid" ng-messages="loginForm.password.$error" ng-messages-include="templates/formErrorMessages.html"></div>
-<!--                <li class="item item-toggle">
+                
+                 </div>
+            <!-- Added -->
+            
+            
+            <!--
+            <div class="list">
+                <label class="item item-input" ng-class="{'has-error' : loginForm.username.$touched && loginForm.username.$invalid}">
+                    <!--<span class="input-label">Username</span>-->
+                   <!-- <input type="text" name="username" placeholder="Username" ng-model="data.username" required>
+                </label>
+                <div class="form-errors" ng-show="loginForm.username.$touched && loginForm.username.$invalid" ng-messages="loginForm.username.$error" ng-messages-include="templates/formErrorMessages.html"></div>
+                <label class="item item-input" ng-class="{'has-error' : loginForm.password.$touched && loginForm.password.$invalid}">
+                    <!--<span class="input-label">Password</span>-->
+                   <!-- <input type="password" name="password" placeholder="Password" ng-model="data.password" required>
+                </label>
+                <div class="form-errors" ng-show="loginForm.password.$touched && loginForm.password.$invalid" ng-messages="loginForm.password.$error" ng-messages-include="templates/formErrorMessages.html"></div>
+                <li class="item item-toggle">
                     Remember Me
                     <label class="toggle toggle-positive">
                       <input type="checkbox">
@@ -34,17 +65,21 @@
                         <div class="handle"></div>
                       </div>
                     </label>
-                 </li>-->
+                 </li>
             </div>
+            
+             -->
             <div class="padding">
-                <button class="button button-block button-positive">
-                    Login
+                
+                <button class="button button-block btn blue">
+                    Sign In
                 </button>
+                
                 <p class="text-center">
-                    <a href="#/forgot-password">Forgot password</a>
-                </p>
-                <p class="text-center">
-                    <a href="#" ui-sref="register">Register here</a>
+                    <button class="button button-block btn-forgetpw green" a href="#" ui-sref="register">
+                    Register
+                    </button>
+                     <a href="#/forgot-password">Forgot Password? </a> 
                 </p>
             </div>
         </form>
